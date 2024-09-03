@@ -1,14 +1,5 @@
-// worker = {
-//     weight: Number, -> kg
-//     experience: Number, -> years
-//     levelOfHydrated: Number, -> mltrs
-//     dizziness: Boolean 
-//   }
-
-//required amount is 0.1ml per kilogram per year of experience
-
 function solve(worker) {
-    if (worker.dizziness === true) {
+    if (worker.dizziness) {
         worker.levelOfHydrated += 0.1 * worker.weight * worker.experience;
         worker.dizziness = false;
     }
