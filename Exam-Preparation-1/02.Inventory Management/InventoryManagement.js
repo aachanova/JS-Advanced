@@ -20,11 +20,6 @@ class InventoryManager {
         }
 
         this.items.set(itemName, this.items.get(itemName) + quantity);
-
-        // if (this.outOfStock.has(itemName)) {
-        //     this.outOfStock.delete(itemName);
-        // }
-
         return `Added ${quantity} ${itemName}(s) to the inventory.`;
 
     }
@@ -79,35 +74,34 @@ class InventoryManager {
         if (this.outOfStock.size > 0) {
             result += `\nOut of Stock: ${Array.from(this.outOfStock).join(", ")}`;
         }
-        console.log(this.items);
-        console.log(this.outOfStock);
-        
         return result;
-        // let result = 'Current Inventory:\n';
-
-        // this.items.forEach((name, qty) => {
-        //     result += `${qty}: ${name}\n`
-        // });
-
-        // if (this.outOfStock.size > 0) {
-        //     const setAsArr = Array.from(this.outOfStock);
-        //     result += 'Out of Stock: ' + setAsArr.join(', ');
-        // }
-
-        // return result;
-        //     let result = ['Current Inventory:']
-
-        //     for (let [name, qty] of this.items) {
-        //         result.push(`${name}: ${qty}`);
-        //     }
-
-        //     if (this.outOfStock.size > 0) {
-        //         result.push(`Out of Stock: ${[...this.outOfStock.values()].join(', ')}`)
-        //     }
-        //     return result.join('\n');
-        // }
     }
 }
+// let result = 'Current Inventory:\n';
+
+// this.items.forEach((name, qty) => {
+//     result += `${qty}: ${name}\n`
+// });
+
+// if (this.outOfStock.size > 0) {
+//     const setAsArr = Array.from(this.outOfStock);
+//     result += 'Out of Stock: ' + setAsArr.join(', ');
+// }
+
+// return result;
+//     let result = ['Current Inventory:']
+
+//     for (let [name, qty] of this.items) {
+//         result.push(`${name}: ${qty}`);
+//     }
+
+//     if (this.outOfStock.size > 0) {
+//         result.push(`Out of Stock: ${[...this.outOfStock.values()].join(', ')}`)
+//     }
+//     return result.join('\n');
+// }
+
+
 
 
 
