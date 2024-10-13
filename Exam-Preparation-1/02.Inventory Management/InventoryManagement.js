@@ -72,7 +72,7 @@ class InventoryManager {
         });
 
         if (this.outOfStock.size > 0) {
-            result += `\nOut of Stock: ${Array.from(this.outOfStock).join(", ")}`;
+            result += `Out of Stock: ${Array.from(this.outOfStock).join(", ")}`;
         }
         return result;
     }
