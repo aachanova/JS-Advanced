@@ -66,60 +66,19 @@ class InventoryManager {
     }
 
     getInventorySummary() {
-        let result = `Current Inventory:\n`;
-        this.items.forEach((qty, name) => {
-            result += `${name}: ${qty}\n`;
-        });
+        let result = [`Current Inventory:`];
+        for (const [itemName, quantity] of this.items) {
+            result.push(`${itemName}: ${quantity}`);        
+       }      
 
         if (this.outOfStock.size > 0) {
-            result += `Out of Stock: ${Array.from(this.outOfStock).join(", ")}`;
+            result.push(`Out of Stock: ${Array.from(this.outOfStock).join(", ")}`);
         }
-        return result;
+
+        return result.join('\n');
     }
+    
 }
-// let result = 'Current Inventory:\n';
-
-// this.items.forEach((name, qty) => {
-//     result += `${qty}: ${name}\n`
-// });
-
-// if (this.outOfStock.size > 0) {
-//     const setAsArr = Array.from(this.outOfStock);
-//     result += 'Out of Stock: ' + setAsArr.join(', ');
-// }
-
-// return result;
-//     let result = ['Current Inventory:']
-
-//     for (let [name, qty] of this.items) {
-//         result.push(`${name}: ${qty}`);
-//     }
-
-//     if (this.outOfStock.size > 0) {
-//         result.push(`Out of Stock: ${[...this.outOfStock.values()].join(', ')}`)
-//     }
-//     return result.join('\n');
-// }
-
-
-
-
-
-
-
-
-//         let result = ['Current Inventory:'];
-
-//         for (let [k, v] of this.items) {
-//             result.push(`${k}: ${v}`)
-//         }
-//         if (this.outOfStock.size > 0) {
-//             result += `\nOut of Stock: ${this.outOfStock.join(", ")}`;
-//         }
-
-//         return result;
-//     }
-// }
 
 // const manager = new InventoryManager(2);
 // console.log(manager.addItem("Drill", 10)); 
