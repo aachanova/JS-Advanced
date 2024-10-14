@@ -67,7 +67,7 @@ class FlightBookingSystem {
                     let currentFlightNumber = flight.flightNumber;
                     let currentBooking = this.bookings.find(b => b.flightNumber == currentFlightNumber);
                     if (currentBooking) {
-                        result.push(`${currentBooking.passengerName} booked for flight ${currentFlightNumber}`);
+                        result.push(`${currentBooking.passengerName} booked for flight ${currentFlightNumber}.`);
                         return result.join('\n');
                     }
                 }
@@ -82,7 +82,7 @@ class FlightBookingSystem {
                     let currentFlightNumber = flight.flightNumber;
                     let currentBooking = this.bookings.find(b => b.flightNumber == currentFlightNumber);
                     if (currentBooking) {
-                        result.push(`${currentBooking.passengerName} booked for flight ${currentFlightNumber}`);
+                        result.push(`${currentBooking.passengerName} booked for flight ${currentFlightNumber}.`);
                         return result.join('\n');
                     }
                 }
