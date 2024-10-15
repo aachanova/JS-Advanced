@@ -70,7 +70,7 @@ function solution() {
     const continuePreviewBtnElement = document.createElement('button');
     continuePreviewBtnElement.classList.add('continue-btn');
     continuePreviewBtnElement.textContent = 'Continue';
-    continuePreviewBtnElement.addEventListener('click', () => onContinue(liPreviewElement));
+    continuePreviewBtnElement.addEventListener('click', () => onContinue(liPreviewElement, editPreviewBtnElement, continuePreviewBtnElement));
 
     const liPreviewElement = document.createElement('li');
     liPreviewElement.classList.add('problem-content');
@@ -99,7 +99,7 @@ function solution() {
     ulPreviewSectionElement.innerHTML = '';
   }
 
-  function onContinue(liPreviewElement) {
+  function onContinue(liPreviewElement, editPreviewBtnElement, continuePreviewBtnElement) {
     ulPendingwSectionElement.appendChild(liPreviewElement);
     addButtonElement.disabled = false;
     editPreviewBtnElement.remove();
@@ -109,8 +109,23 @@ function solution() {
     resolvedBtnElement.textContent = 'Resolved';
     resolvedBtnElement.classList.add('resolve-btn');
     liPreviewElement.appendChild(resolvedBtnElement);
+    resolvedBtnElement.addEventListener('click', () => onResolved(liPreviewElement, resolvedBtnElement));
   }
 
+  function onResolved(liPreviewElement, resolvedBtnElement) {
+    ulResolvedSectionElement.appendChild(liPreviewElement);
+    resolvedBtnElement.remove();
+
+    const clearBtnElement = document.createElement('button');
+    clearBtnElement.textContent = 'Clear';
+    clearBtnElement.classList.add('clear-btn');
+    liPreviewElement.appendChild(clearBtnElement);
+    clearBtnElement.addEventListener('click', () => onClear(liPreviewElement));
+  }
+
+  function onClear(liPreviewElement) {
+    liPreviewElement.remove();
+  }
 }
 
 
